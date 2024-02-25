@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(160, 230, 252, 1) 35%, rgba(116, 219, 251, 1) 51%, rgba(255, 255, 255, 1) 100%);
+}
+
+
+
+h1 {
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    margin: 20px 0;
+    text-align: center;
+
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    width: 80vw;
+}
+
+#search-input {
+    width: 80%;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    font-size: clamp(0.7 rem, 0.8vw, 1.5rem);
+    margin-right: 20px;
+    -webkit-box-shadow: 0px 0px 6px 2px rgba(46, 199, 51, 1);
+    -moz-box-shadow: 0px 0px 6px 2px rgba(46, 199, 51, 1);
+    box-shadow: 0px 0px 6px 2px rgba(46, 199, 51, 1);
+
+}
+
+.search-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 5px 20px;
+    border: 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10rem;
+    transition: all 0.02s;
+    font-weight: bold;
+    color: rgb(37, 37, 37);
+    z-index: 0;
+    box-shadow: 0 0px 7px -5px rgba(0, 0, 0, 0.5);
+}
+
+.search-btn:hover {
+    background: rgb(193, 228, 248);
+    color: rgb(33, 0, 85);
+}
+
+.search-btn:active {
+    transform: scale(0.97);
+}
+
+.hoverEffect {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.hoverEffect div {
+    background: rgb(222, 0, 75);
+    background: linear-gradient(90deg, rgba(222, 0, 75, 1) 0%, rgba(191, 70, 255, 1) 49%, rgba(0, 212, 255, 1) 100%);
+    border-radius: 40rem;
+    width: 10rem;
+    height: 10rem;
+    transition: 0.4s;
+    filter: blur(20px);
+    animation: effect infinite 3s linear;
+    opacity: 0.5;
+}
+
+.search-btn:hover .hoverEffect div {
+    width: 8rem;
+    height: 8rem;
+}
+
+@keyframes effect {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+.search__results {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-column-gap: 40px;
+    grid-row-gap: 12px;
+    width: 70vw;
+    margin: auto;
+
+}
+
+/* .card{
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+    margin-bottom: 60px;
+    -webkit-box-shadow: 0px 0px 6px 2px rgb(100, 155, 102);
+    -moz-box-shadow: 0px 0px 6px 2px rgb(100, 155, 102);
+    box-shadow: 0px 0px 6px 2px rgb(100, 155, 102);
+    border-radius: 15px;
+    overflow: hidden;
+} */
+
+.search__result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    height: max-content;
+    -webkit-box-shadow: 0px 0px 6px 2px rgb(100, 155, 102);
+    -moz-box-shadow: 0px 0px 6px 2px rgb(100, 155, 102);
+    box-shadow: 0px 0px 6px 2px rgb(100, 155, 102);
+    border-radius: 15px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.search__result a {
+    text-decoration: none;
+    color: #000;
+    text-transform: capitalize;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: clamp(0.1 rem, 0.8vw, 1.5rem);
+    display: block;
+     background-color: #fff;
+     margin-top: 10px;
+}
+
+.search__result img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+    /* transition: transform 0.3s ease; */
+
+}
+
+.search__result img:hover {
+    transform: scale(1.1);
+}
+
+
+.show__more{
+    display: block;
+    text-align: center;
+    margin: 30px auto;
+    display: none;
+}
